@@ -30,3 +30,6 @@ dgpe: dgpe.o dgpef.o dcdflib.o ipmpar.o
 
 .f.o:
 	$(F77) $(FFLAGS) $($*-FFLAGS) -c $< -o $@
+
+clean:
+	rm -f mammal-sigma mult-data mult-mix-lwt charfreq dgpe *.o
