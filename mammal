@@ -125,10 +125,13 @@ while(iarg>=6){
   if(opt=="-d"){
     plusF <- TRUE; not.an.option <- FALSE
   }
+  if(opt=="-v"){
+      version <- TRUE; not.an.option <- FALSE
+    }
   if(not.an.option) stop(paste(opt,"is not an option"))
   iarg <- iarg - 1 
 }
-
+if(isTRUE(version)){cat('v1.1.1\n'); quit(status=0, save='no')}
 if(is.null(seqfile)) stop("sequence file needed: -s seqfile")
 if(is.null(treefile)) stop("tree file needed: -t treefile")
 if(is.null(nclass)) stop("must specify number of classes: -c nclasses")
